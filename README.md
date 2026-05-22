@@ -1,70 +1,176 @@
-# Getting Started with Create React App
+# SyncDesk Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Real-time collaborative helpdesk frontend built using React.js and Socket.io Client.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Real-time ticket updates
+- Live ticket locking system
+- Multi-user synchronization
+- Dynamic dashboard
+- Socket.io integration
+- Responsive UI
+- Instant lock/unlock updates
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Tech Stack
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- React.js
+- Socket.io Client
+- Axios
+- CSS
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Folder Structure
 
-### `npm run build`
+```bash
+frontend/
+│
+├── public/
+├── src/
+│   ├── api/
+│   ├── components/
+│   ├── styles/
+│   ├── socket.js
+│   ├── App.js
+│   └── index.js
+│
+└── package.json
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Move To Frontend Folder
 
-### `npm run eject`
+```bash
+cd frontend
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Install Dependencies
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm install
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+# Start Frontend
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+npm start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Frontend runs on:
 
-### Code Splitting
+```bash
+http://localhost:3000
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+# Real-Time Workflow
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## User Joins Dashboard
 
-### Making a Progressive Web App
+```javascript
+socket.emit("join_dashboard", {
+  userId: currentUser
+});
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## Lock Ticket
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```javascript
+socket.emit("lock_ticket", {
+  ticketId,
+  userId: currentUser
+});
+```
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Unlock Ticket
 
-### `npm run build` fails to minify
+```javascript
+socket.emit("unlock_ticket", {
+  ticketId
+});
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+# Live Events
+
+## ticket_locked
+
+Updates all connected clients instantly.
+
+---
+
+## ticket_unlocked
+
+Removes lock globally in real-time.
+
+---
+
+## current_locks
+
+Syncs all existing locks when user joins.
+
+---
+
+# Real-Time Collaboration
+
+- Multiple users supported
+- Live synchronization
+- Real-time UI updates
+- Collaborative ticket management
+- Lock ownership validation
+
+---
+
+# UI Features
+
+- Ticket dashboard
+- Lock status indicators
+- Real-time updates
+- Responsive ticket grid
+- User-specific controls
+
+---
+
+# Production Features
+
+- Component-based architecture
+- API abstraction layer
+- Socket cleanup
+- State management using React Hooks
+- Error handling
+- Scalable structure
+
+---
+
+# Future Improvements
+
+- Tailwind CSS
+- Framer Motion animations
+- Redux/Zustand
+- React Query
+- TypeScript
+- Dark mode
+- Activity timeline
+- Analytics dashboard
+
+---
+
+# Author
+
+Lucky Mishra

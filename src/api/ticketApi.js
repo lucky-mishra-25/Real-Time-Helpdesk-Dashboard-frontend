@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5000/api"
+  baseURL:
+    "https://syncdesk-backend.onrender.com/api"
 });
 
 export const getTickets = async () => {
@@ -9,7 +10,14 @@ export const getTickets = async () => {
   return response.data;
 };
 
-export const updateTicket = async (ticketId, payload) => {
-  const response = await API.put(`/tickets/${ticketId}`, payload);
+export const updateTicket = async (
+  ticketId,
+  payload
+) => {
+  const response = await API.put(
+    `/tickets/${ticketId}`,
+    payload
+  );
+
   return response.data;
 };

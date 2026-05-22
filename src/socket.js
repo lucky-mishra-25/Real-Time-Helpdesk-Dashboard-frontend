@@ -1,7 +1,7 @@
 import { io } from "socket.io-client";
 
 const socket = io(
-  "https://syncdesk-backend.onrender.com",
+  "https://real-time-helpdesk-dashboard-backend.onrender.com",
   {
     transports: ["websocket", "polling"]
   }

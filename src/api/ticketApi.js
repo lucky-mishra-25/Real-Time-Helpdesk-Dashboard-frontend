@@ -2,7 +2,7 @@ import axios from "axios";
 
 const API = axios.create({
   baseURL:
-    "https://syncdesk-backend.onrender.com/api"
+    "https://real-time-helpdesk-dashboard-backend.onrender.com/api"
 });
 
 export const getTickets = async () => {
